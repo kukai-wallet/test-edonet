@@ -13251,6 +13251,7 @@ class DelegateComponent {
             // if it is a tezos-domain
             if (this.toPkh && this.toPkh.indexOf('.') > -1) {
                 try {
+                    this.messageService.startSpinner('Looking up Domain...');
                     const pkh = yield this.tezosDomains.getAddressFromDomain(this.toPkh);
                     if (pkh) {
                         this.toPkh = pkh;
@@ -13258,6 +13259,9 @@ class DelegateComponent {
                 }
                 catch (error) {
                     return error.message;
+                }
+                finally {
+                    this.messageService.stopSpinner();
                 }
             }
             if ((!this.inputValidationService.address(this.toPkh) &&

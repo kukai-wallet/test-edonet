@@ -22973,54 +22973,60 @@
                   switch (_context89.prev = _context89.next) {
                     case 0:
                       if (!(this.toPkh && this.toPkh.indexOf('.') > -1)) {
-                        _context89.next = 11;
+                        _context89.next = 15;
                         break;
                       }
 
                       _context89.prev = 1;
-                      _context89.next = 4;
+                      this.messageService.startSpinner('Looking up Domain...');
+                      _context89.next = 5;
                       return this.tezosDomains.getAddressFromDomain(this.toPkh);
 
-                    case 4:
+                    case 5:
                       pkh = _context89.sent;
 
                       if (pkh) {
                         this.toPkh = pkh;
                       }
 
-                      _context89.next = 11;
+                      _context89.next = 12;
                       break;
 
-                    case 8:
-                      _context89.prev = 8;
+                    case 9:
+                      _context89.prev = 9;
                       _context89.t0 = _context89["catch"](1);
                       return _context89.abrupt("return", _context89.t0.message);
 
-                    case 11:
+                    case 12:
+                      _context89.prev = 12;
+                      this.messageService.stopSpinner();
+                      return _context89.finish(12);
+
+                    case 15:
                       if (!(!this.inputValidationService.address(this.toPkh) && this.toPkh !== '' || this.toPkh.length > 1 && this.toPkh.slice(0, 2) !== 'tz' || this.walletService.wallet.getImplicitAccount(this.toPkh))) {
-                        _context89.next = 15;
+                        _context89.next = 19;
                         break;
                       }
 
                       return _context89.abrupt("return", 'invalid delegate address');
 
-                    case 15:
+                    case 19:
                       if (this.inputValidationService.fee(this.fee)) {
-                        _context89.next = 19;
+                        _context89.next = 23;
                         break;
                       }
 
                       return _context89.abrupt("return", 'invalid fee');
 
-                    case 19:
+                    case 23:
                       return _context89.abrupt("return", '');
 
-                    case 20:
+                    case 24:
                     case "end":
                       return _context89.stop();
                   }
                 }
-              }, _callee88, this, [[1, 8]]);
+              }, _callee88, this, [[1, 9, 12, 15]]);
             }));
           } // Only Numbers with Decimals
 
