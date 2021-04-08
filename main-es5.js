@@ -18727,7 +18727,7 @@
             _classCallCheck(this, TzktService);
 
             this.network = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["CONSTANTS"].NETWORK.replace('edonet', 'edo2net');
-            this.bcd = 'https://api.better-call.dev/v1';
+            this.bcd = 'https://api.test.better-call.dev/v1';
           }
 
           _createClass(TzktService, [{

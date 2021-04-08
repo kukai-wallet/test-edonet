@@ -11359,7 +11359,7 @@ __webpack_require__.r(__webpack_exports__);
 class TzktService {
     constructor() {
         this.network = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["CONSTANTS"].NETWORK.replace('edonet', 'edo2net');
-        this.bcd = 'https://api.better-call.dev/v1';
+        this.bcd = 'https://api.test.better-call.dev/v1';
     }
     getContractAddresses(pkh) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
