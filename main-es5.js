@@ -12455,7 +12455,12 @@
               var tokenTransfer = this.operationService.parseTokenTransfer(op);
 
               if (tokenTransfer && this.tokenService.isKnownTokenId(tokenTransfer === null || tokenTransfer === void 0 ? void 0 : tokenTransfer.tokenId)) {
-                return tokenTransfer;
+                // makes sure that decimals property is defined
+                var asset = this.tokenService.getAsset(tokenTransfer.tokenId);
+
+                if (typeof asset.decimals !== 'undefined') {
+                  return tokenTransfer;
+                }
               }
             }
 
